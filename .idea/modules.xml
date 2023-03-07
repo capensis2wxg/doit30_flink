@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/datagen/datagen.iml" filepath="$PROJECT_DIR$/datagen/datagen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doit30_flink.iml" filepath="$PROJECT_DIR$/doit30_flink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flink_course/flink_course.iml" filepath="$PROJECT_DIR$/flink_course/flink_course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kafka_course/kafka_course.iml" filepath="$PROJECT_DIR$/kafka_course/kafka_course.iml" />
+    </modules>
+  </component>
+</project>
