@@ -12,7 +12,7 @@ public class AdminClientDemo {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         Properties props = new Properties();
-        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG,"doit01:9092,doit02:9092");
+        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "doit01:9092,doit02:9092");
 
         // 管理客户端
         AdminClient adminClient = KafkaAdminClient.create(props);
@@ -36,7 +36,7 @@ public class AdminClientDemo {
                 List<Node> replicas = partition.replicas();
                 List<Node> isr = partition.isr();
                 Node leader = partition.leader();
-                System.out.println(topicName+ "\t" +partitionIndex + "\t" + replicas + "\t" + isr + "\t" + leader);
+                System.out.println(topicName + "\t" + partitionIndex + "\t" + replicas + "\t" + isr + "\t" + leader);
             }
         }
 

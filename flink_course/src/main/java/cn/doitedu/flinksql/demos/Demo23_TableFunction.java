@@ -27,32 +27,30 @@ public class Demo23_TableFunction {
 */
 
         Table table = tenv.fromValues(DataTypes.ROW(
-                        DataTypes.FIELD("id", DataTypes.INT()),
-                        DataTypes.FIELD("name", DataTypes.STRING()),
-                        DataTypes.FIELD("phone_numbers", DataTypes.STRING())),
+                DataTypes.FIELD("id", DataTypes.INT()),
+                DataTypes.FIELD("name", DataTypes.STRING()),
+                DataTypes.FIELD("phone_numbers", DataTypes.STRING())),
                 Row.of(1, "zs", "13888,137,1354455"),
-                Row.of(2, "bb",  "1366688,1374,132224455")
+                Row.of(2, "bb", "1366688,1374,132224455")
         );
-        tenv.createTemporaryView("t",table);
+        tenv.createTemporaryView("t", table);
 
 
         // 注册函数
-        tenv.createTemporarySystemFunction("mysplit",MySplit.class);
+        tenv.createTemporarySystemFunction("mysplit", MySplit.class);
 
         // 展开手机号字符串
         tenv.executeSql("select  *  from  t , lateral  table(mysplit(phone_numbers,',')) as t1(p,l) ")/*.print()*/;
         tenv.executeSql("select  *  from  t  left join lateral  table(mysplit(phone_numbers,',')) as t1(p,l) on true ").print();
 
 
-
     }
 
     @FunctionHint(output = @DataTypeHint("ROW<phone STRING, length INT>"))
-    public static class MySplit extends TableFunction<Row>{
-
-        public void eval(String str,String delimiter){
+    public static class MySplit extends TableFunction<Row> {
+        public void eval(String str, String delimiter) {
             for (String s : str.split(delimiter)) {
-                collect(Row.of(s,s.length()));
+                collect(Row.of(s, s.length()));
             }
         }
     }

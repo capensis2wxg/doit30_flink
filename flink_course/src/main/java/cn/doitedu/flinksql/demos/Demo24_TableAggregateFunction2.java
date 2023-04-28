@@ -87,7 +87,6 @@ public class Demo24_TableAggregateFunction2 {
     }
 
     public static class MyAccumulator {
-
         public @DataTypeHint("ROW<id INT,rgender STRING,score DOUBLE>") Row first;
         public @DataTypeHint("ROW<id INT,rgender STRING,score DOUBLE>") Row second;
 
@@ -98,7 +97,6 @@ public class Demo24_TableAggregateFunction2 {
 
         @Override
         public MyAccumulator createAccumulator() {
-
             MyAccumulator acc = new MyAccumulator();
             acc.first = null;
             acc.second = null;
