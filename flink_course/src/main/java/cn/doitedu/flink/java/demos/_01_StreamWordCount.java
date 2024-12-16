@@ -1,6 +1,7 @@
 package cn.doitedu.flink.java.demos;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
+import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.configuration.Configuration;
@@ -11,7 +12,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.util.Collector;
 
 /**
- * 通过socket数据源，去请求一个socket服务（doit01:9999）得到数据流
+ * 通过socket数据源，去请求一个socket服务（doit01:9998）得到数据流
  * 然后统计数据流中出现的单词及其个数
  */
 @SuppressWarnings("DuplicatedCode")
@@ -38,7 +39,7 @@ public class _01_StreamWordCount {
 
         // 通过source算子，把socket数据源加载为一个dataStream（数据流）
         // [root@doit01 ~]# nc -lk 9999
-        SingleOutputStreamOperator<String> source = env.socketTextStream("localhost", 9999)
+        SingleOutputStreamOperator<String> source = env.socketTextStream("master102", 9998)
                 .setParallelism(1)
                 .slotSharingGroup("g1");
 
@@ -57,7 +58,7 @@ public class _01_StreamWordCount {
                 .slotSharingGroup("g2")
                 .shuffle();
 
-        SingleOutputStreamOperator<Tuple2<String, Integer>> words2 = words.map(tp -> Tuple2.of(tp.f0, tp.f1 * 10));
+        SingleOutputStreamOperator<Tuple2<String, Integer>> words2 = words.map(tp -> Tuple2.of(tp.f0, tp.f1 * 10)).returns(Types.TUPLE(Types.STRING, Types.INT));
 
         /*
             word中得到的是Tuple2<String, Integer>, 接下来需要将Tuple2的多个<String, Integer>按照String进行分组，形成新的结构Tuple2<<String, Tuple>,String>
