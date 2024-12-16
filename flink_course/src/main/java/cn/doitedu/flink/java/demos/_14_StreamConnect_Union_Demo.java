@@ -53,7 +53,7 @@ public class _14_StreamConnect_Union_Demo {
             @Override
             public String map1(String value) {
                 // 把数字*10，再返回字符串
-                return  prefix + (Integer.parseInt(value)*10) + "";
+                return  prefix + (Integer.parseInt(value)*10);
             }
 
             /**

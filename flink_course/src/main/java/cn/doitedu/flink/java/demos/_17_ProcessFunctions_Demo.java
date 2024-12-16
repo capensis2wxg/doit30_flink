@@ -33,7 +33,7 @@ public class _17_ProcessFunctions_Demo {
         env.setParallelism(1);
 
         // id,eventId
-        DataStreamSource<String> stream1 = env.socketTextStream("localhost", 9998);
+        DataStreamSource<String> stream1 = env.socketTextStream("master102", 9998);
 
         // 在普通的dataStream上调用process算子，传入的是 "ProcessFunction"
         SingleOutputStreamOperator<Tuple2<String, String>> s1 = stream1.process(new ProcessFunction<String, Tuple2<String, String>>() {
@@ -65,7 +65,7 @@ public class _17_ProcessFunctions_Demo {
 
 
         /*
-         * 在 keyedStream上调用 process算子，传入的是 "KeyedProcessFunction"
+         * 在 keyedStream上调用 process 算子，传入的是 "KeyedProcessFunction"
          * KeyedProcessFunction 中的，泛型1：流中的key 的类型；  泛型2：流中的数据的类型； 泛型3：处理后的输出结果的类型
          */
         // 对s1流进行keyBy分组
