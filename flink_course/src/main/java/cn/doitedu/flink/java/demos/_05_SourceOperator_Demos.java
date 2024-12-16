@@ -46,18 +46,15 @@ public class _05_SourceOperator_Demos {
         DataStreamSource<LongValue> parallelCollection = env.fromParallelCollection(new LongValueSequenceIterator(1, 100), TypeInformation.of(LongValue.class)).setParallelism(2);
         parallelCollection.map(lv -> lv.getValue() + 100)/*.print()*/;
 
-        DataStreamSource<Long> sequence = env.generateSequence(1, 100);
+        DataStreamSource<Long> sequence = env.fromSequence(1, 100);
         sequence.map(x -> x - 1)/*.print()*/;
 
-        /*
-         * 从 socket 端口获取数据得到数据流
-         * socketTextStream方法产生的source算子，是一个单并行度的source算子
-         */
-        // DataStreamSource<String> socketSource = env.socketTextStream("localhost", 9999);
+        // 从 socket 端口获取数据得到数据流，socketTextStream方法产生的source算子，是一个单并行度的source算子
+        DataStreamSource<String> socketSource = env.socketTextStream("localhost", 9999);
         // socketSource.print();
 
 
-        /**
+        /*
          * 从文件得到数据流
          */
         DataStreamSource<String> fileSource = env.readTextFile("flink_course/data/wc/input/wc.txt", "utf-8");
@@ -70,17 +67,15 @@ public class _05_SourceOperator_Demos {
         fileSource2.map(String::toUpperCase)/*.print()*/;
 
 
-        /**
+        /*
          * 引入扩展包 ：  flink-connector-kafka
          * 从kafka中读取数据得到数据流
          */
         KafkaSource<String> kafkaSource = KafkaSource.<String>builder()
                 // 设置订阅的目标主题
                 .setTopics("tp01")
-
                 // 设置消费者组id
                 .setGroupId("gp01")
-
                 // 设置kafka服务器地址
                 .setBootstrapServers("doit01:9092")
 
@@ -115,7 +110,6 @@ public class _05_SourceOperator_Demos {
         // env.addSource();  //  接收的是  SourceFunction接口的 实现类
         DataStreamSource<String> streamSource = env.fromSource(kafkaSource, WatermarkStrategy.noWatermarks(), "kfk-source");//  接收的是 Source 接口的实现类
         streamSource.print();
-
 
         env.execute();
 

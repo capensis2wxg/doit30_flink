@@ -11,7 +11,7 @@ import org.apache.flink.util.Collector;
  * @Site: <a href="www.51doit.com">多易教育</a>
  * @QQ: 657270652
  * @Date: 2022/4/30
- * @Desc: 批处理计算模式的wordcount示例
+ * @Desc: 批处理计算模式的wordCount示例
  **/
 public class _02_BatchWordCount {
 

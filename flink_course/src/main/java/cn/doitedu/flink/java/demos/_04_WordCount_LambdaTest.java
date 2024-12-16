@@ -19,7 +19,6 @@ public class _04_WordCount_LambdaTest {
     public static void main(String[] args) throws Exception {
 
         // 创建一个编程入口（执行环境）
-
         // 流式处理入口环境
         StreamExecutionEnvironment envStream = StreamExecutionEnvironment.getExecutionEnvironment();
 

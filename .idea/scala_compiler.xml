@@ -4,7 +4,7 @@
     <profile name="Maven 1" modules="flink_course">
       <parameters>
         <parameter value="-dependencyfile" />
-        <parameter value="E:\doit30_flink\flink_course\target/.scala_dependencies" />
+        <parameter value="F:\IDEAProject2021\doit30_flink\flink_course\target/.scala_dependencies" />
       </parameters>
     </profile>
   </component>

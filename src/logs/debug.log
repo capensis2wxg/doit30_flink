@@ -1,26 +1,26 @@
-2023-05-29 00:22:00  [ SourceCoordinator-Source: KafkaSource-default_catalog.default_database.t_events:2 ] - [ ERROR ]  Exception while handling result from async call in SourceCoordinator-Source: KafkaSource-default_catalog.default_database.t_events. Triggering job failover.
-org.apache.flink.util.FlinkRuntimeException: Failed to list subscribed topic partitions due to 
-	at org.apache.flink.connector.kafka.source.enumerator.KafkaSourceEnumerator.checkPartitionChanges(KafkaSourceEnumerator.java:237)
-	at org.apache.flink.runtime.source.coordinator.ExecutorNotifier.lambda$null$1(ExecutorNotifier.java:83)
-	at org.apache.flink.util.ThrowableCatchingRunnable.run(ThrowableCatchingRunnable.java:40)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.RuntimeException: Failed to get metadata for topics [doit30-events2].
-	at org.apache.flink.connector.kafka.source.enumerator.subscriber.KafkaSubscriberUtils.getTopicMetadata(KafkaSubscriberUtils.java:47)
-	at org.apache.flink.connector.kafka.source.enumerator.subscriber.TopicListSubscriber.getSubscribedTopicPartitions(TopicListSubscriber.java:52)
-	at org.apache.flink.connector.kafka.source.enumerator.KafkaSourceEnumerator.getSubscribedTopicPartitions(KafkaSourceEnumerator.java:222)
-	at org.apache.flink.runtime.source.coordinator.ExecutorNotifier.lambda$notifyReadyAsync$2(ExecutorNotifier.java:80)
-	... 7 more
-Caused by: java.util.concurrent.ExecutionException: org.apache.kafka.common.errors.UnknownTopicOrPartitionException: This server does not host this topic-partition.
-	at org.apache.kafka.common.internals.KafkaFutureImpl.wrapAndThrow(KafkaFutureImpl.java:45)
-	at org.apache.kafka.common.internals.KafkaFutureImpl.access$000(KafkaFutureImpl.java:32)
-	at org.apache.kafka.common.internals.KafkaFutureImpl$SingleWaiter.await(KafkaFutureImpl.java:89)
-	at org.apache.kafka.common.internals.KafkaFutureImpl.get(KafkaFutureImpl.java:260)
-	at org.apache.flink.connector.kafka.source.enumerator.subscriber.KafkaSubscriberUtils.getTopicMetadata(KafkaSubscriberUtils.java:44)
-	... 10 more
-Caused by: org.apache.kafka.common.errors.UnknownTopicOrPartitionException: This server does not host this topic-partition.
+2024-12-16 23:44:53  [ flink-akka.actor.default-dispatcher-6:0 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:44:54  [ flink-akka.actor.default-dispatcher-8:126 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:44:54  [ flink-akka.actor.default-dispatcher-8:440 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:44:54  [ flink-akka.actor.default-dispatcher-6:459 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:13  [ flink-akka.actor.default-dispatcher-8:19110 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:13  [ flink-akka.actor.default-dispatcher-13:19121 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:16  [ flink-akka.actor.default-dispatcher-13:22120 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:16  [ flink-akka.actor.default-dispatcher-15:22129 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:19  [ flink-akka.actor.default-dispatcher-13:25115 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:19  [ flink-akka.actor.default-dispatcher-16:25127 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:22  [ flink-akka.actor.default-dispatcher-13:28229 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:22  [ flink-akka.actor.default-dispatcher-16:28261 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:25  [ flink-akka.actor.default-dispatcher-13:31226 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:25  [ flink-akka.actor.default-dispatcher-13:31234 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:28  [ flink-akka.actor.default-dispatcher-17:34229 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:28  [ flink-akka.actor.default-dispatcher-17:34248 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:31  [ flink-akka.actor.default-dispatcher-16:37228 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:31  [ flink-akka.actor.default-dispatcher-17:37240 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:34  [ flink-akka.actor.default-dispatcher-17:40226 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:45:34  [ flink-akka.actor.default-dispatcher-17:40233 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:48:04  [ flink-akka.actor.default-dispatcher-10:0 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:48:04  [ flink-akka.actor.default-dispatcher-5:41 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:48:26  [ flink-akka.actor.default-dispatcher-10:22724 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:48:26  [ flink-akka.actor.default-dispatcher-15:22732 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:48:29  [ flink-akka.actor.default-dispatcher-15:25733 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
+2024-12-16 23:48:29  [ flink-akka.actor.default-dispatcher-15:25745 ] - [ ERROR ]  Exception occurred in REST handler: Job 8c5f7bd1af0af920de54ea5b8d2a05d2 not found
