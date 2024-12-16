@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[1093]大样本统计.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[1093]大样本统计.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1093" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[1093]大样本统计.java" />
+              <option name="titleSlug" value="statistics-from-a-large-sample" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[1439]有序矩阵中的第 k 个最小数组和.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../IDEAProject/leetcode/leetcode/editor/cn/doc/content/[1439]有序矩阵中的第 k 个最小数组和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1439" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../IDEAProject/leetcode/leetcode/editor/cn/[1439]有序矩阵中的第 k 个最小数组和.java" />
+              <option name="titleSlug" value="find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[201]数字范围按位与.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[201]数字范围按位与.md" />
+              <option name="frontendQuestionId" value="leetcode.cn201" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[201]数字范围按位与.java" />
+              <option name="titleSlug" value="bitwise-and-of-numbers-range" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[233]数字 1 的个数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[233]数字 1 的个数.md" />
+              <option name="frontendQuestionId" value="leetcode.cn233" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[233]数字 1 的个数.java" />
+              <option name="titleSlug" value="number-of-digit-one" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[239]滑动窗口最大值.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[239]滑动窗口最大值.md" />
+              <option name="frontendQuestionId" value="leetcode.cn239" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[239]滑动窗口最大值.java" />
+              <option name="titleSlug" value="sliding-window-maximum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../IDEAProject/leetcode/leetcode/editor/cn/[1439]有序矩阵中的第 k 个最小数组和.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../IDEAProject/leetcode/leetcode/editor/cn/doc/content/[1439]有序矩阵中的第 k 个最小数组和.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1439" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../IDEAProject/leetcode/leetcode/editor/cn/[1439]有序矩阵中的第 k 个最小数组和.java" />
+              <option name="titleSlug" value="find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../IDEAProject/leetcode/leetcode/editor/cn/[LCP 36]最多牌组数.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../IDEAProject/leetcode/leetcode/editor/cn/doc/content/[LCP 36]最多牌组数.md" />
+              <option name="frontendQuestionId" value="leetcode.cnLCP 36" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/../IDEAProject/leetcode/leetcode/editor/cn/[LCP 36]最多牌组数.java" />
+              <option name="titleSlug" value="Up5XYM" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
