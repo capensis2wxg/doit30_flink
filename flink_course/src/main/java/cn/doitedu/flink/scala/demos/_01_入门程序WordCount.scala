@@ -1,4 +1,4 @@
-/*
+
 package cn.doitedu.flink.scala.demos
 
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment, createTypeInformation}
@@ -8,7 +8,7 @@ object _01_入门程序WordCount {
 
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
 
-    val sourceStream: DataStream[String] = env.socketTextStream("doit01", 9999)
+    val sourceStream: DataStream[String] = env.socketTextStream("master102", 9999)
 
     // sourceStream.flatMap(s=>s.split("\\s+")).map(w=>(w,1))
 
@@ -25,4 +25,3 @@ object _01_入门程序WordCount {
   }
 
 }
-*/

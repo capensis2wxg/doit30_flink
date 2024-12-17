@@ -50,7 +50,7 @@ public class _05_SourceOperator_Demos {
         sequence.map(x -> x - 1)/*.print()*/;
 
         // 从 socket 端口获取数据得到数据流，socketTextStream方法产生的source算子，是一个单并行度的source算子
-        DataStreamSource<String> socketSource = env.socketTextStream("localhost", 9999);
+        DataStreamSource<String> socketSource = env.socketTextStream("master102", 1000);
         // socketSource.print();
 
 
