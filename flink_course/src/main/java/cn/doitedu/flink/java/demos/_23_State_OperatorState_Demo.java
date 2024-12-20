@@ -58,14 +58,12 @@ public class _23_State_OperatorState_Demo {
  * 要使用{@code operator state}，需要让用户自己的Function类去实现{@code CheckpointedFunction}
  * 然后在其中的方法initializeState 中，去拿到operator state 存储器
  */
-class StateMapFunction implements  MapFunction<String,String>,CheckpointedFunction{
+class StateMapFunction implements MapFunction<String,String>, CheckpointedFunction{
     ListState<String> listState;
 
     /**
      * 正常的MapFunction的处理逻辑方法
      * @param value The input value.
-     * @return
-     * @throws Exception
      */
     @Override
     public String map(String value) throws Exception {
@@ -96,7 +94,6 @@ class StateMapFunction implements  MapFunction<String,String>,CheckpointedFuncti
     /**
      * 算子任务在启动之初，会调用下面的方法来为用户进行状态数据初始化
      * @param context the context for initializing the operator
-     * @throws Exception
      */
     @Override
     public void initializeState(FunctionInitializationContext context) throws Exception {
@@ -110,7 +107,6 @@ class StateMapFunction implements  MapFunction<String,String>,CheckpointedFuncti
         // getListState方法，在task失败后，task自动重启时会帮用户自动加载最近一次的快照状态数据
         // 如果是job重启，则不会自动加载此前的快照状态数据
         listState = operatorStateStore.getListState(stateDescriptor);  // 在状态存储器上调用get方法，得到具体结构的状态管理器
-
 
         /*
          * unionListState 和普通 ListState的区别：

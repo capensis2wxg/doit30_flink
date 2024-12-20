@@ -30,9 +30,7 @@ public class _05_SourceOperator_Demos {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(conf);
         env.setParallelism(1);  // 默认并行度
 
-        /*
-         * 从集合得到数据流
-         */
+        // 从集合得到数据流
         DataStreamSource<Integer> fromElements = env.fromElements(1, 2, 3, 4, 5);
         fromElements.map(d -> d * 10)/*.print()*/;
 
@@ -54,9 +52,7 @@ public class _05_SourceOperator_Demos {
         // socketSource.print();
 
 
-        /*
-         * 从文件得到数据流
-         */
+        // 从文件得到数据流
         DataStreamSource<String> fileSource = env.readTextFile("flink_course/data/wc/input/wc.txt", "utf-8");
         fileSource.map(String::toUpperCase)/*.print()*/;
 
@@ -67,10 +63,7 @@ public class _05_SourceOperator_Demos {
         fileSource2.map(String::toUpperCase)/*.print()*/;
 
 
-        /*
-         * 引入扩展包 ：  flink-connector-kafka
-         * 从kafka中读取数据得到数据流
-         */
+        // 引入扩展包 ：  flink-connector-kafka 从kafka中读取数据得到数据流
         KafkaSource<String> kafkaSource = KafkaSource.<String>builder()
                 // 设置订阅的目标主题
                 .setTopics("tp01")

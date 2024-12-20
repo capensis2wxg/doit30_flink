@@ -38,7 +38,6 @@ import java.util.*;
  * 1,e06,28000,p05,60
  * 1,e07,30000,p02,10
  **/
-@SuppressWarnings("DuplicatedCode")
 public class _20_Window_Api_Demo1 {
 
     public static void main(String[] args) throws Exception {
@@ -147,7 +146,7 @@ public class _20_Window_Api_Demo1 {
                     public Tuple2<Integer, Integer> add(EventBean2 eventBean, Tuple2<Integer, Integer> accumulator) {
                         /*
                          accumulator.setField(accumulator.f0+1,0);
-                         accumulator.setField(accumulator.f1+eventBean.getActTimelong(),1);
+                         accumulator.setField(accumulator.f1+eventBean.getActTimeLong(),1);
                          return accumulator;
                         */
                         return Tuple2.of(accumulator.f0 + 1, accumulator.f1 + eventBean.getActTimelong());
@@ -198,7 +197,7 @@ public class _20_Window_Api_Demo1 {
         watermarkedBeanStream
                 .keyBy(EventBean2::getGuid)
                 .window(SlidingEventTimeWindows.of(Time.seconds(30),Time.seconds(10)))
-                .max("actTimelong")
+                .max("actTimeLong")
                 /*.print()*/;
 
 
@@ -212,7 +211,7 @@ public class _20_Window_Api_Demo1 {
         watermarkedBeanStream
                 .keyBy(EventBean2::getGuid)
                 .window(SlidingEventTimeWindows.of(Time.seconds(30),Time.seconds(10)))
-                .maxBy("actTimelong")
+                .maxBy("actTimeLong")
                 /*.print()*/;
 
 
@@ -233,8 +232,8 @@ public class _20_Window_Api_Demo1 {
                         // 遍历窗口中的每一条数据
                         for (EventBean2 element : elements) {
                             String eventId = element.getEventId();
-                            Tuple2<Integer, Long> countAndTimelong = tmpMap.getOrDefault(eventId,Tuple2.of(0,0L));
-                            tmpMap.put(eventId,Tuple2.of(countAndTimelong.f0+1,countAndTimelong.f1+element.getActTimelong()) );
+                            Tuple2<Integer, Long> countAndTimeLong = tmpMap.getOrDefault(eventId,Tuple2.of(0,0L));
+                            tmpMap.put(eventId,Tuple2.of(countAndTimeLong.f0+1,countAndTimeLong.f1+element.getActTimelong()) );
                         }
 
                         // 然后，从tmpMap中，取到 平均时长 最大的前两个事件
@@ -242,16 +241,16 @@ public class _20_Window_Api_Demo1 {
                         for (Map.Entry<String, Tuple2<Integer, Long>> entry : tmpMap.entrySet()) {
                             String eventId = entry.getKey();
                             Tuple2<Integer, Long> tuple = entry.getValue();
-                            double avgTimelong = tuple.f1/ (double)tuple.f0;
-                            tmpList.add(Tuple2.of(eventId,avgTimelong));
+                            double avgTimeLong = tuple.f1/ (double)tuple.f0;
+                            tmpList.add(Tuple2.of(eventId,avgTimeLong));
                         }
 
                         // 然后对tmpList按平均时长排序
-                        Collections.sort(tmpList, new Comparator<Tuple2<String, Double>>() {
+                        tmpList.sort(new Comparator<Tuple2<String, Double>>() {
                             @Override
                             public int compare(Tuple2<String, Double> tp1, Tuple2<String, Double> tp2) {
-                               /* return tp2.f1.compareTo(tp1.f1);*/
-                                return Double.compare(tp2.f1,tp1.f1);
+                                /* return tp2.f1.compareTo(tp1.f1);*/
+                                return Double.compare(tp2.f1, tp1.f1);
                             }
                         });
 
